@@ -1,4 +1,5 @@
 require_relative("../db/sql_runner.rb")
+require_relative("../models/burger.rb")
 
 class Eatery
 
@@ -10,6 +11,7 @@ class Eatery
     @name = info['name']
   end
 
+# CRUD ACTIONS
   def save()
     sql = "INSERT INTO eateries (name) VALUES ($1)
     RETURNING id;"
@@ -50,5 +52,17 @@ class Eatery
     values = [@id]
     SqlRunner.run(sql, values)
   end
+
+# END OF CRUD ACTIONS
+
+  def find_burgers()
+    sql = "SELECT * FROM burgers WHERE eatery_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    burgers = results.map {|burger| Burger.new(burger)}
+  end
+
+
+
 
 end
