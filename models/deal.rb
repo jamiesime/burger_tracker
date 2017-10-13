@@ -13,6 +13,8 @@ class Deal
     @burger_id = info['burger_id']
   end
 
+# CRUD ACTIONS
+
   def save()
     sql = "INSERT INTO deals (name, day_id, eatery_id, burger_id)
     VALUES ($1, $2, $3, $4)
@@ -47,7 +49,7 @@ class Deal
   def self.delete_all()
     sql = "DELETE FROM deals;"
     values = []
-    SqlRunner(sql, values)
+    SqlRunner.run(sql, values)
   end
 
   def delete()
@@ -55,5 +57,19 @@ class Deal
     values = [@id]
     SqlRunner.run(sql, values)
   end
+
+# end of CRUD actions
+
+  def deal_details()
+    sql = "SELECT deals.* FROM deals INNER JOIN burgers
+    ON burgers.id = $1 INNER JOIN days ON days.id = $2"
+    values = [@burger_id, @day_id]
+    results = SqlRunner.run(sql, values)
+    deals = results.map {|deal| Deal.new(deal)}
+    return deals
+  end
+
+
+
 
 end

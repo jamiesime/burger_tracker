@@ -64,13 +64,6 @@ class Eatery
     return burgers
   end
 
-  def find_deals()
-    sql = "SELECT * FROM deals WHERE eatery_id = $1"
-    values = [@id]
-    results = SqlRunner.run(sql, values)
-    deals = results.map {|deal| Deal.new(deal)}
-    return deals
-  end
 
 
 

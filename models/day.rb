@@ -17,4 +17,10 @@ class Day
     @id = day['id'].to_i
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM days;"
+    values = []
+    SqlRunner.run(sql, values)
+  end
+
 end

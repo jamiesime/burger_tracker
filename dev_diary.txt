@@ -1,0 +1,25 @@
+Friday:
+
+Today I started by outlining the basic use cases for the eventual
+burger tracker site, and then scribbled down what classes I need
+and what their likely attributes and methods would be, and turned
+that into an initial class diagram, which is likely to change.
+
+Then I filled in all of the CRUD methods for each of the classes
+that needed them. Next was to put in a few methods I'd identified
+in the class diagram - find_burgers and find_deals in the eatery
+class.
+
+The next thing to do is to find all the burgers currently related
+to a specific deal. This might need a join table (ie burger_deal),
+or I could add an attribute to burger, deal_id, but not all burgers
+will be a part of a deal at all times. A join table might be best.
+
+UPDATE:
+
+I have created a function in Deal.rb which inner joins from
+burgers and deals on their ids, to get the ids of all of the
+classes in one result. From this, I will be able to create a
+view which cycles through each class looking for those ids
+and where they match, and then display them organised in some
+format via HTML/CSS.

@@ -4,8 +4,10 @@ require_relative("../models/day.rb")
 require_relative("../models/deal.rb")
 require("pry-byebug")
 
+Deal.delete_all()
 Burger.delete_all()
 Eatery.delete_all()
+Day.delete_all()
 
 day1 = Day.new({'name' => 'Monday'})
 day2 = Day.new({'name' => 'Tuesday'})
@@ -34,6 +36,13 @@ burger1 = Burger.new({
   'eatery_id' => eatery1.id
   })
 burger1.save()
+
+burger2 = Burger.new({
+  'name' => 'Cheesey Bobo',
+  'price' => 6,
+  'eatery_id' => eatery1.id
+  })
+burger2.save()
 
 deal1 = Deal.new({
   'name' => 'Half Price',
