@@ -14,7 +14,7 @@ class BurgerTest < MiniTest::Test
   end
 
   def test_save()
-
+    
   end
 
 end

@@ -1,6 +1,9 @@
-
+require_relative("../db/sql_runner.rb")
 
 class Burger
+
+  attr_accessor :name, :price, :eatery_id
+  attr_reader :id
 
   def initialize(info)
     @id = info['id'] if ['id']
@@ -15,6 +18,41 @@ class Burger
     values = [@name, @price, @eatery_id]
     burger = SqlRunner.run(sql, values).first()
     @id = burger['id'].to_i
+  end
+
+  def update()
+    sql = "UPDATE burgers SET (name, price, eatery_id)
+     = ($1, $2, $3)
+     WHERE id = $4"
+    values = [@name, @price, @eatery_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.find_all()
+    sql = "SELECT * FROM burgers"
+    values = []
+    tables = SqlRunner.run(sql, values)
+    results = tables.map {|table| Burger.new(table)}
+    return results
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM burgers WHERE id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values).first()
+    return result
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM burgers;"
+    values = []
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM burgers WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
   end
 
 end
