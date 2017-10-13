@@ -24,7 +24,7 @@ CREATE TABLE burgers (
 CREATE TABLE deals (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
-  burger INT8 REFERENCES burgers(id),
-  eateries INT8 REFERENCES eateries(id),
-  days INT8 REFERENCES days(id)
+  burger_id INT8 REFERENCES burgers(id),
+  eatery_id INT8 REFERENCES eateries(id),
+  day_id INT8 REFERENCES days(id)
 );

@@ -14,12 +14,12 @@ class Deal
   end
 
   def save()
-    sql = "INSERT INTO eateries (name, day_id, eatery_id, burger_id)
+    sql = "INSERT INTO deals (name, day_id, eatery_id, burger_id)
     VALUES ($1, $2, $3, $4)
     RETURNING id;"
     values = [@name, @day_id, @eatery_id, @burger_id]
-    eatery = SqlRunner.run(sql, values).first()
-    @id = eatery['id'].to_i
+    deal = SqlRunner.run(sql, values).first()
+    @id = deal['id'].to_i
   end
 
   def update()
@@ -37,9 +37,9 @@ class Deal
     return results
   end
 
-  def self.find()
+  def self.find(id)
     sql = "SELECT * FROM deals WHERE id = $1"
-    values = []
+    values = [@id]
     result = SqlRunner.run(sql, values)
     return result
   end

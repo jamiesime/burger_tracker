@@ -41,6 +41,7 @@ deal1 = Deal.new({
   'eatery_id' => eatery1.id,
   'day_id' => day1.id
   })
+deal1.save()
 
 binding.pry
 nil
