@@ -23,4 +23,12 @@ class Day
     SqlRunner.run(sql, values)
   end
 
+  def self.find_all()
+    sql = "SELECT * FROM days;"
+    values = []
+    result = SqlRunner.run(sql, values)
+    days = result.map {|day| Day.new(day)}
+    return days
+  end
+
 end

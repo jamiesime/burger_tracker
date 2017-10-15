@@ -1,0 +1,38 @@
+
+
+<h1>All Entries:</h1>
+
+<div class="table-container">
+<table>
+  <tr>
+    <div class="tcell">
+      <th>Burger</th>
+    </div>
+    <div class="tcell">
+      <th>Day</th>
+    </div>
+    <div class="tcell">
+      <th>Eatery</th>
+    </div>
+    <div class="tcell">
+      <th>Deal</th>
+    </div>
+  </tr>
+<% for result in @results %>
+  <tr>
+    <div class="tcell">
+      <td><%= result.find_burgers() %> </td>
+    </div>
+    <div class="tcell">
+      <td><%= result.find_days() %></td>
+    </div>
+    <div class="tcell">
+      <td><%= result.find_eateries() %></td>
+    </div>
+    <div class="tcell">
+      <td><%= result.name %></td>
+    </div>
+  </tr>
+<% end %>
+</table>
+</div>

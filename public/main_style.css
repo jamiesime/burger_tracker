@@ -1,6 +1,7 @@
 body {
   background-color: tomato;
   margin: 0px;
+  font-family: sans-serif;
 }
 
 .nav-container {
@@ -9,6 +10,7 @@ body {
   display: flex;
   justify-content: flex-start;
   background-color: white;
+  font-family: sans-serif;
 }
 
 .nav-container nav {
@@ -22,6 +24,12 @@ body {
      justify-content: space-around;
 }
 
+.nav-container a {
+  font-family: sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+}
+
 .cell {
   justify-content: space-between;
   margin: 10px 0px;
@@ -30,4 +38,23 @@ body {
 
 h1 {
   text-align: center;
+  font-family: sans-serif;
+}
+
+.biglogo {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+}
+
+.table-container {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  border: 1px;
 }

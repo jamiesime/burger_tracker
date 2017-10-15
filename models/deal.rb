@@ -1,4 +1,5 @@
 require_relative("../db/sql_runner.rb")
+require_relative("./burger.rb")
 
 class Deal
 
@@ -61,13 +62,34 @@ class Deal
 
 # end of CRUD actions
 
-  def deal_details()
+  def self.deal_details()
     sql = "SELECT deals.* FROM deals INNER JOIN burgers
     ON burgers.id = $1 INNER JOIN days ON days.id = $2"
     values = [@burger_id, @day_id]
     results = SqlRunner.run(sql, values)
     deals = results.map {|deal| Deal.new(deal)}
     return deals
+  end
+
+  def find_burgers()
+    sql = "SELECT * FROM burgers WHERE id = $1"
+    values = [@burger_id]
+    result = SqlRunner.run(sql, values).first()
+    return result['name'].to_s
+  end
+
+  def find_eateries()
+    sql = "SELECT * FROM eateries WHERE id = $1"
+    values = [@eatery_id]
+    result = SqlRunner.run(sql, values).first()
+    return result['name'].to_s
+  end
+
+  def find_days()
+    sql = "SELECT * FROM days WHERE id = $1"
+    values = [@day_id]
+    result = SqlRunner.run(sql, values).first()
+    return result['name'].to_s
   end
 
 
