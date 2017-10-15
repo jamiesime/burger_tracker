@@ -1,0 +1,25 @@
+.form-container {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+}
+
+.field {
+  flex: 1;
+  margin: 20px;
+  font-size: 20px;
+}
+
+.field label {
+  display: block;
+}
+
+.field input {
+  font-size: 20px;
+}
+
+.field select {
+  width: 220px;
+  font-size: 20px;
+}

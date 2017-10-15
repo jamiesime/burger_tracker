@@ -36,13 +36,14 @@ class Deal
     sql = "SELECT * FROM deals"
     values = []
     results = SqlRunner.run(sql, values)
-    return results
+    deals = results.map {|result| Deal.new(result)}
+    return deals
   end
 
   def self.find(id)
     sql = "SELECT * FROM deals WHERE id = $1"
     values = [@id]
-    result = SqlRunner.run(sql, values)
+    result = SqlRunner.run(sql, values).first()
     return result
   end
 

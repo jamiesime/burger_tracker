@@ -1,23 +1,35 @@
+<div class="form-container">
 
+  <form action="/result" method="post">
 
-<form action="/result" method="post">
+    <div class="field">
+      <label for="name">Name: </label>
+      <input type="text" name="name" value="">
+    </div>
 
-  <label for="name">Name: </label>
-  <input type="text" name="name" value="">
+    <div class="field">
+      <label for="eatery">Eatery: </label>
+      <input type="text" name="eatery" value="">
+    </div>
 
-  <label for="eatery">Eatery: </label>
-  <input type="text" name="eatery" value="">
+    <div class="field">
+      <label for="dealname">Deal Name: </label>
+      <input type="text" name="Deal Name" value="">
+    </div>
 
-  <label for="dealname">Deal Name: </label>
-  <input type="text" name="Deal Name" value="">
+    <div class="field">
+      <label for="dealType">Deal Type: </label>
+      <select name="dealType" id="dealType">
+        <% @deals.each do |deal| %>
+          <option value="<%= deal.id %>"> <%=deal.name%> </option>
+        <% end %>
+      </select>
+    </div>
 
-  <label for="dealType"></label>
-  <select name="dealType">
-    <%= @deals.each do |deal| %>
-      <option value="<%= deal.id %>"> <%=deal.name%> </option>
-  </select>
+    <div class="field">
+      <label for="day">Day: </label>
+      <input type="text" name="day" value="">
+    </div>
 
-  <label for="day">Day: </label>
-  <input type="text" name="day" value="">
-
-</form>
+  </form>
+</div>

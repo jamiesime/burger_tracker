@@ -9,5 +9,9 @@ end
 
 get '/add' do
   @deals = Deal.find_all()
-  erb (:add)
+  erb ( :add )
+end
+
+get '/result' do
+  erb ( :result )
 end
