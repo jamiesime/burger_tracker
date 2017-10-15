@@ -1,0 +1,18 @@
+MVP Outline:
+
+Nav -
+  Menu containing links to the pages in the mvp,
+  present on every page.
+
+Pages:
+- Home page
+      Explain basic functionality of website.
+- Add Burger
+      Takes user to page with form to fill in all details,
+      then adds these to the burger_tracker db, and notifies
+      of success or errors.
+- View
+    - Takes user to page where they can select available
+      eateries and view all details relating to that eatery.
+    - Can also select by day, and show all details of all
+      deals available on that day.
