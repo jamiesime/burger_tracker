@@ -8,7 +8,7 @@ class Deal
 
   def initialize(info)
     @id = info['id'] if ['id']
-    @name = info['name'] if ['name']
+    @name = info['name']
     @day_id = info['day_id']
     @eatery_id = info['eatery_id']
     @burger_id = info['burger_id']
@@ -71,27 +71,12 @@ class Deal
     return deals
   end
 
-  def find_burgers()
-    sql = "SELECT * FROM burgers WHERE id = $1"
-    values = [@burger_id]
-    result = SqlRunner.run(sql, values).first()
-    return result['name'].to_s
-  end
-
-  def find_eateries()
-    sql = "SELECT * FROM eateries WHERE id = $1"
-    values = [@eatery_id]
-    result = SqlRunner.run(sql, values).first()
-    return result['name'].to_s
-  end
-
   def find_days()
     sql = "SELECT * FROM days WHERE id = $1"
     values = [@day_id]
     result = SqlRunner.run(sql, values).first()
     return result['name'].to_s
   end
-
 
 
 

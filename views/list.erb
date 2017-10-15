@@ -9,7 +9,7 @@
       <th>Burger</th>
     </div>
     <div class="tcell">
-      <th>Day</th>
+      <th>Price</th>
     </div>
     <div class="tcell">
       <th>Eatery</th>
@@ -17,21 +17,25 @@
     <div class="tcell">
       <th>Deal</th>
     </div>
+    <div class="tcell">
+      <th>Day</th>
+    </div>
   </tr>
-<% for result in @results %>
+<% for burger in @burgers %>
   <tr>
     <div class="tcell">
-      <td><%= result.find_burgers() %> </td>
+      <td><%= burger.name() %> </td>
     </div>
     <div class="tcell">
-      <td><%= result.find_days() %></td>
+      <td><%= burger.price() %> </td>
     </div>
     <div class="tcell">
-      <td><%= result.find_eateries() %></td>
+      <td><%= burger.find_eateries() %> </td>
     </div>
     <div class="tcell">
-      <td><%= result.name %></td>
+      <td><%= burger.find_deals() %> </td>
     </div>
+
   </tr>
 <% end %>
 </table>

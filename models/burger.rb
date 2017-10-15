@@ -50,9 +50,34 @@ class Burger
   end
 
   def delete()
-    sql = "DELETE FROM burgers WHERE id = $1"
+    sql = "DELETE FROM burgers WHERE id = $1;"
     values = [@id]
     SqlRunner.run(sql, values)
   end
+
+  # end of CRUD
+
+  def find_deals()
+    sql = "SELECT * FROM deals WHERE burger_id = $1;"
+    values = [@id]
+    result = SqlRunner.run(sql, values).first()
+    if result != nil
+      return result['name'].to_s
+    else
+      return "No deal"
+    end
+  end
+
+  def find_eateries()
+    sql = "SELECT * FROM eateries WHERE id = $1;"
+    values = [@eatery_id]
+    result = SqlRunner.run(sql, values).first()
+    if result != nil
+      return result['name'].to_s
+    else
+      return "No eatery"
+    end
+  end
+
 
 end

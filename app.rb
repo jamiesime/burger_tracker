@@ -31,8 +31,6 @@ end
 
 get '/list' do
   @burgers = Burger.find_all()
-  @eateries = Eatery.find_all()
-  @days = Day.find_all()
-  @results = Deal.find_all()
+  @deal = Deal.find_all()
   erb ( :list )
 end

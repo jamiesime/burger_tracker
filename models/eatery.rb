@@ -64,14 +64,5 @@ class Eatery
     return burgers
   end
 
-  def deal_details()
-    sql = "SELECT deals.* FROM deals INNER JOIN burgers
-    ON burgers.id = $1 INNER JOIN days ON days.id = $2"
-    values = [@burger_id, @day_id]
-    results = SqlRunner.run(sql, values)
-    deals = results.map {|deal| Deal.new(deal)}
-    return deals
-  end
-
 
 end
