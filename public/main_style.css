@@ -8,6 +8,7 @@ body {
   display: -ms-flex;
   display: flex;
   justify-content: flex-start;
+  background-color: white;
 }
 
 .nav-container nav {

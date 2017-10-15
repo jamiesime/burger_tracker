@@ -12,6 +12,10 @@ get '/add' do
   erb ( :add )
 end
 
-get '/result' do
+post '/result' do
   erb ( :result )
+end
+
+get '/view' do
+  erb ( :view )
 end
