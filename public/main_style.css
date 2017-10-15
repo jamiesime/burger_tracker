@@ -1,0 +1,32 @@
+body {
+  background-color: tomato;
+  margin: 0px;
+}
+
+.nav-container {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav-container nav {
+     flex: 1;
+     display: -webkit-flex;
+     display: -ms-flex;
+     display: flex;
+     flex-flow: row;
+     margin: 10px 10px;
+     list-style: none;
+     justify-content: space-around;
+}
+
+.cell {
+  justify-content: space-between;
+  margin: 10px 0px;
+  text-decoration: none;
+}
+
+h1 {
+  text-align: center;
+}
