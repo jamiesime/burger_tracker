@@ -10,11 +10,16 @@ get '/' do
   erb ( :home )
 end
 
-get '/add' do
+get '/new' do
   @deals = Deal.find_all()
   @days = Day.find_all()
   @eateries = Eatery.find_all()
-  erb ( :add )
+  erb ( :new )
+end
+
+get '/add_burger' do
+  @eateries = Eatery.find_all()
+  erb ( :add_burger )
 end
 
 post '/result' do
