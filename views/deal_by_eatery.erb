@@ -11,9 +11,6 @@
       <th>Price</th>
     </div>
     <div class="tcell">
-      <th>Eatery</th>
-    </div>
-    <div class="tcell">
       <th>Deal</th>
     </div>
     <div class="tcell">
@@ -21,7 +18,6 @@
     </div>
   </tr>
   <% for match in @matches %>
-    <% if @eatery == match.fetch_eatery() %>
     <tr>
       <div class="tcell">
         <td><%= match.fetch_burger() %> </td>
@@ -30,15 +26,11 @@
         <td><%= match.fetch_price() %> </td>
       </div>
       <div class="tcell">
-        <td><%= match.fetch_eatery() %> </td>
-      </div>
-      <div class="tcell">
         <td><%= match.fetch_deal() %> </td>
       </div>
       <div class="tcell">
         <td> <%= match.fetch_day() %> </td>
       </div>
-      <% end %>
     <% end %>
   </tr>
 </table>

@@ -1,7 +1,7 @@
 body {
   background-color: tomato;
   margin: 0px;
-  font-family: sans-serif;
+  font-family: 'Anton', sans-serif;
 }
 
 .nav-container {
@@ -10,7 +10,6 @@ body {
   display: flex;
   justify-content: flex-start;
   background-color: white;
-  font-family: sans-serif;
 }
 
 .nav-container nav {
@@ -19,15 +18,16 @@ body {
      display: -ms-flex;
      display: flex;
      flex-flow: row;
-     margin: 10px 10px;
+     margin: 0px 10px;
      list-style: none;
      justify-content: space-around;
 }
 
 .nav-container a {
-  font-family: sans-serif;
   text-decoration: none;
-  font-size: 20px;
+  padding: 0px 20px;
+  font-size: 30px;
+  color: #351708;
 }
 
 .cell {
@@ -38,7 +38,10 @@ body {
 
 h1 {
   text-align: center;
-  font-family: sans-serif;
+}
+
+.page-content {
+
 }
 
 .biglogo {
@@ -50,4 +53,24 @@ h1 {
 
 .sub-menu {
   text-align: center;
+  width: 40%;
+  margin: auto;
+}
+
+.option {
+  margin: 10px 0px;
+  background-color: #ffc1a0;
+}
+
+.sub-menu .option a {
+  text-decoration: none;
+  font-size: 24px;
+}
+
+a:hover {
+  color: white;
+}
+
+.nav-container a:hover {
+  background-color: black;
 }
