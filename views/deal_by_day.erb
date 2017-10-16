@@ -16,6 +16,9 @@
     <div class="tcell">
       <th>Deal</th>
     </div>
+    <div class="tcell">
+      <th>Special Price:</th>
+    </div>
   </tr>
   <% for match in @matches %>
     <% if @day == match.fetch_day() %>
@@ -31,6 +34,13 @@
       </div>
       <div class="tcell">
         <td><%= match.fetch_deal() %> </td>
+      </div>
+      <div class="tcell">
+        <td>
+          <% price = match.fetch_price() %>
+          <% newprice = match.get_discount(price) %>
+          <%= newprice %>
+      </td>
       </div>
       <% end %>
     <% end %>

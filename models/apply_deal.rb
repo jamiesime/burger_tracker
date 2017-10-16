@@ -73,6 +73,19 @@ class ApplyDeal
     return eatery['name'].to_s
   end
 
+  def get_discount(price)
+    price.to_f
+    sql = "SELECT * FROM deals WHERE id = $1"
+    values = [@deal_id]
+    deal = SqlRunner.run(sql, values).first()
+    dealtype = deal["deal_type"].to_s
+    case (dealtype)
+    when "halfprice"
+        newprice = (price.to_f / 2)
+        return newprice.to_f
+      end
+      return "Not found!"
+  end
 
 
 
