@@ -44,3 +44,24 @@ Then I need to make sure these are searchable and will show up
 on the list all page. After this, I can worry about the savings
 calculation extension and anything else I might want to add,
 including a better look for the site.
+
+Monday, 8:30pm:
+
+Managed to untangle the mess from yesterday and get the MVP functionality
+working - adding burgers, eateries, deals and linking them all works.
+Deals don't currently have any actual effect beyond linking to the other
+classes - this is the last extension I need to work on.
+
+The db is filterable by eatery (shows all burgers associated with it)
+and by day (shows all deals on a selected day in all eateries). There
+is also an erb which simply lists every deal on all days - although
+not burgers that don't have deals (this is acceptable).
+
+Remaining is to tighten up the deal creation - it might not need as
+much information as it is getting, since it is gotten again in the
+link and I think this is creating doubles. Then to add a calculate
+discount function and possibly different types of deals it is possible
+to add.
+
+After that a bit more styling and it is finished. I did some of that
+today in the process of working on other things.

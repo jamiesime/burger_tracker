@@ -3,31 +3,31 @@ require_relative("./burger.rb")
 
 class Deal
 
-  attr_accessor :name, :day, :eatery_id
+  attr_accessor :name, :day, :deal_type
   attr_reader :id
 
   def initialize(info)
     @id = info['id'] if ['id']
     @name = info['name']
-    @eatery_id = info['eatery_id']
+    @deal_type = info['deal_type']
   end
 
 # CRUD ACTIONS
 
   def save()
-    sql = "INSERT INTO deals (name, eatery_id)
+    sql = "INSERT INTO deals (name, deal_type)
     VALUES ($1, $2)
     RETURNING id;"
-    values = [@name, @eatery_id]
+    values = [@name, @deal_type]
     deal = SqlRunner.run(sql, values).first()
     @id = deal['id'].to_i
   end
 
   def update()
-    sql = "UPDATE burgers SET (name, eatery_id)
+    sql = "UPDATE burgers SET (name, deal_type)
      = ($1, $2)
-     WHERE id = $4"
-    values = [@name, @eatery_id]
+     WHERE id = $3"
+    values = [@name, @deal_type]
     SqlRunner.run(sql, values)
   end
 

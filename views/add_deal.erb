@@ -1,4 +1,4 @@
-<h1>ADD BURGER</h1>
+<h1>ADD DEAL</h1>
 
 <div class="form-container">
 
@@ -10,29 +10,13 @@
     </div>
 
     <div class="field">
-      <label for="eatery_id">Eatery: </label>
-      <select name="eatery_id" id="eatery_id">
-        <% @eateries.each do |eatery| %>
-          <option value="<%= eatery.id %>"> <%=eatery.name%> </option>
-        <% end %>
-      </select>
-    </div>
-
-    <div class="field">
-      <label for="burger_id">Burger: </label>
-      <select name="burger_id" id="burger_id">
-        <% @burgers.each do |burger| %>
-          <option value="<%= burger.id %>"> <%=burger.name%> </option>
-        <% end %>
-      </select>
-    </div>
-
-    <div class="field">
-      <label for="day_id">Day: </label>
-      <select name="day_id" id="day_id">
-        <% @days.each do |day| %>
-          <option value="<%= day.id %>"> <%= day.name %> </option>
-        <% end %>
+      <label for="deal_type"></label>
+      <select class="deal_type" name="deal_type">
+        <option value="halfprice">Half Price</option>
+        <option value="20off">20% Off</option>
+        <option value="1free">Get 1 Free</option>
+        <option value="freedrink">Free Drink</option>
+        <option value="1pound">1 Pound Burger</option>
       </select>
     </div>
 

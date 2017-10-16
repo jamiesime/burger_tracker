@@ -25,8 +25,8 @@ CREATE TABLE burgers (
 CREATE TABLE deals (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
-  eatery_id INT8 REFERENCES eateries(id) ON DELETE CASCADE,
-  day VARCHAR(255)
+  deal_type VARCHAR(255)
+
 );
 
 CREATE TABLE applydeal (
