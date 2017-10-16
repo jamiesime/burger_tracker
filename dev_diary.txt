@@ -23,3 +23,24 @@ classes in one result. From this, I will be able to create a
 view which cycles through each class looking for those ids
 and where they match, and then display them organised in some
 format via HTML/CSS.
+
+Sunday:
+
+Have added a lot to the views today, got basic structure of
+website established. The list all page is currently missing
+days for the deals, because I haven't written a function to get
+them yet.
+
+Quite a messy day, it is likely the way I approached it at first
+is the reason. I did not use a separate joining class to get all
+of the data, so now most of those 'find' functions are in burgers.
+
+Needs a lot more work still.
+
+Next thing to do is to make sure all of the New pages work and
+properly add rows to the db for their respective tables.
+
+Then I need to make sure these are searchable and will show up
+on the list all page. After this, I can worry about the savings
+calculation extension and anything else I might want to add,
+including a better look for the site.

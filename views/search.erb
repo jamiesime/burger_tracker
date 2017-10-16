@@ -1,19 +1,35 @@
 
 
 <div class="form-container">
-  <form action="/search" method="post">
+  <form action="/deal_by_eatery" method="post">
     <div class="field">
-      <label for="searchBox">Search: </label>
-      <input type="text" name="searchBox" value="">
+      <label for="eatery">View By Eatery: </label>
+      <select name="eatery" id="eatery">
+        <% @eateries.each do |eatery| %>
+          <option value="<%= eatery.id %>"> <%=eatery.name%> </option>
+        <% end %>
+      </select>
+      <input type="submit" name="submit" value="Show">
+    </div>
+  </form>
+</div>
+
+<div class="form-container">
+  <form action="/deal_by_day" method="post">
+    <div class="field">
+      <label for="day">View Deals By Day: </label>
+        <select name="day" id="day">
+          <% @days.each do |day| %>
+            <option value="<%= day.id %>"> <%= day.name %> </option>
+          <% end %>
+        </select>
+      <input type="submit" name="submit" value="Show">
     </div>
   </form>
 </div>
 
 
 
-
 <div class="form-container">
-
   <a href="/list">List All Entries</a>
-
 </div>

@@ -1,6 +1,5 @@
+<h1> <%= @eatery %> </h1>
 
-
-<h1>All Entries:</h1>
 
 <div class="table-container">
 <table>
@@ -22,6 +21,7 @@
     </div>
   </tr>
   <% for match in @matches %>
+    <% if @eatery == match.fetch_eatery() %>
     <tr>
       <div class="tcell">
         <td><%= match.fetch_burger() %> </td>
@@ -38,6 +38,7 @@
       <div class="tcell">
         <td> <%= match.fetch_day() %> </td>
       </div>
+      <% end %>
     <% end %>
   </tr>
 </table>

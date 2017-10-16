@@ -1,7 +1,8 @@
 require_relative("../models/burger.rb")
 require_relative("../models/eatery.rb")
-require_relative("../models/day.rb")
 require_relative("../models/deal.rb")
+require_relative("../models/day.rb")
+require_relative("../models/apply_deal.rb")
 require("pry-byebug")
 
 Deal.delete_all()
@@ -24,7 +25,6 @@ day5.save()
 day6.save()
 day7.save()
 
-
 eatery1 = Eatery.new({
   'name' => 'Stacked'
   })
@@ -38,7 +38,7 @@ burger1 = Burger.new({
 burger1.save()
 
 burger2 = Burger.new({
-  'name' => 'Cheesey Bobo',
+  'name' => 'Cheese Supreme',
   'price' => 6,
   'eatery_id' => eatery1.id
   })
@@ -46,11 +46,19 @@ burger2.save()
 
 deal1 = Deal.new({
   'name' => 'Half Price',
-  'burger_id' => burger1.id,
   'eatery_id' => eatery1.id,
-  'day_id' => day1.id
+  'day' => 'Wednesday',
+  'operation' => 2
   })
 deal1.save()
+
+applydeal1 = ApplyDeal.new({
+  'burger_id' => burger1.id,
+  'deal_id' => deal1.id,
+  'day_id' => day3.id,
+  'eatery_id' => eatery1.id
+  })
+applydeal1.save()
 
 binding.pry
 nil

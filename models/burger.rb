@@ -57,7 +57,7 @@ class Burger
 
   # end of CRUD
 
-  def find_deals()
+  def find_deal()
     sql = "SELECT * FROM deals WHERE burger_id = $1;"
     values = [@id]
     result = SqlRunner.run(sql, values).first()
@@ -76,6 +76,17 @@ class Burger
       return result['name'].to_s
     else
       return "No eatery"
+    end
+  end
+
+  def find_day()
+    sql = "SELECT * FROM deals WHERE burger_id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values).first()
+    if result != nil
+      return result['day'].to_s
+    else
+      return 'N/A'
     end
   end
 

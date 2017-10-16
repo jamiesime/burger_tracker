@@ -56,6 +56,13 @@ class Eatery
 
 # END OF CRUD ACTIONS
 
+  def self.get_name(id)
+    sql = "SELECT * FROM eateries WHERE id = $1;"
+    values = [id]
+    eatery = SqlRunner.run(sql, values).first()
+    return eatery['name'].to_s
+  end
+
   def find_burgers()
     sql = "SELECT * FROM burgers WHERE eatery_id = $1"
     values = [@id]

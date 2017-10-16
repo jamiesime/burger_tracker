@@ -23,12 +23,26 @@ class Day
     SqlRunner.run(sql, values)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM days WHERE id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values).first()
+    return result
+  end
+
   def self.find_all()
     sql = "SELECT * FROM days;"
     values = []
     result = SqlRunner.run(sql, values)
     days = result.map {|day| Day.new(day)}
     return days
+  end
+
+  def self.get_name(id)
+    sql = "SELECT * FROM days WHERE id = $1;"
+    values = [id]
+    day = SqlRunner.run(sql, values).first()
+    return day['name'].to_s
   end
 
 end
