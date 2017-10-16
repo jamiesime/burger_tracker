@@ -17,7 +17,10 @@
       <th>Day</th>
     </div>
   </tr>
+
+  <% list = [] %>
   <% for match in @matches %>
+    <% if @eatery == match.fetch_eatery() %>
     <tr>
       <div class="tcell">
         <td><%= match.fetch_burger() %> </td>
@@ -31,7 +34,27 @@
       <div class="tcell">
         <td> <%= match.fetch_day() %> </td>
       </div>
+    </tr>
+    <% list << match.fetch_burger() %>
     <% end %>
-  </tr>
+    <% end %>
+    <% for nodeal in @nodeals %>
+      <% if !list.include?(nodeal.name) %>
+      <tr>
+        <div class="tcell">
+          <td><%= nodeal.name() %> </td>
+        </div>
+        <div class="tcell">
+          <td><%= nodeal.price() %> </td>
+        </div>
+        <div class="tcell">
+          <td> No deal </td>
+        </div>
+        <div class="tcell">
+          <td> N/A </td>
+        </div>
+      </tr>
+    <% end %>
+    <% end %>
 </table>
 </div>

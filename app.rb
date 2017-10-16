@@ -41,6 +41,7 @@ end
 
 post '/deal_by_eatery' do
   @eatery = Eatery.get_name(params["eatery"].to_i)
+  @nodeals = Eatery.find_burgers(params["eatery"].to_i)
   @matches = ApplyDeal.find_all()
   erb ( :deal_by_eatery )
 end

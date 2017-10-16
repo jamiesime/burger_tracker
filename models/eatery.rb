@@ -63,9 +63,9 @@ class Eatery
     return eatery['name'].to_s
   end
 
-  def find_burgers()
+  def self.find_burgers(id)
     sql = "SELECT * FROM burgers WHERE eatery_id = $1"
-    values = [@id]
+    values = [id]
     results = SqlRunner.run(sql, values)
     burgers = results.map {|burger| Burger.new(burger)}
     return burgers
