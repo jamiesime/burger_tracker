@@ -46,7 +46,6 @@ class Burger
     return result
   end
 
-
   def self.find(id)
     sql = "SELECT * FROM burgers WHERE id = $1"
     values = [@id]
