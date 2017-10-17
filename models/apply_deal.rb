@@ -44,7 +44,11 @@ class ApplyDeal
     sql = "SELECT * FROM burgers WHERE id = $1;"
     values = [@burger_id]
     burger = SqlRunner.run(sql, values).first()
-    return burger['name'].to_s
+    if burger != nil
+      return burger['name'].to_s
+    else
+      return "shouldn't exist"
+    end
   end
 
   def fetch_deal()
@@ -62,21 +66,33 @@ class ApplyDeal
     sql = "SELECT * FROM days WHERE id = $1;"
     values = [@day_id]
     day = SqlRunner.run(sql, values).first()
-    return day['name'].to_s
+    if day != nil
+      return day['name'].to_s
+    else
+      return "N/A"
+    end
   end
 
   def fetch_price()
     sql = "SELECT * FROM burgers WHERE id = $1;"
     values = [@burger_id]
     price = SqlRunner.run(sql, values).first()
-    return price['price'].to_i
+    if price != nil
+      return price['price'].to_i
+    else
+      return 0
+    end
   end
 
   def fetch_eatery()
     sql = "SELECT * FROM eateries WHERE id = $1;"
     values = [@eatery_id]
     eatery = SqlRunner.run(sql, values).first()
-    return eatery['name'].to_s
+    if eatery != nil
+      return eatery['name'].to_s
+    else
+      return "Not given"
+    end
   end
 
   def get_discount(price)
@@ -89,8 +105,15 @@ class ApplyDeal
     when "halfprice"
         newprice = (price.to_f / 2)
         return newprice.to_f
-      end
-      return "Not found!"
+    when "20off"
+        reduction = (price.to_f / 100) * 20
+        newprice = (price -= reduction)
+        return newprice
+    when "1pound"
+        newprice = 1
+        return newprice
+    end
+      return "N/A"
   end
 
 

@@ -14,9 +14,6 @@ end
 post '/deal_conf' do
   deal = Deal.new(params)
   deal.save()
-  linkdeal = ApplyDeal.new(params)
-  linkdeal.deal_id = deal.id
-  linkdeal.save()
   erb ( :deal_conf )
 end
 
