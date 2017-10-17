@@ -27,6 +27,8 @@ end
 
 post '/link_conf' do
   newlink = ApplyDeal.new(params)
+  newid = Eatery.find_from_burger(params['burger_id'])
+  newlink.eatery_id = newid
   newlink.save()
   erb ( :"edit/link_conf" )
 end

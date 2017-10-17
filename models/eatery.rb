@@ -64,11 +64,22 @@ class Eatery
   end
 
   def self.find_burgers(id)
-    sql = "SELECT * FROM burgers WHERE eatery_id = $1"
+    sql = "SELECT * FROM burgers WHERE eatery_id = $1;"
     values = [id]
     results = SqlRunner.run(sql, values)
     burgers = results.map {|burger| Burger.new(burger)}
     return burgers
+  end
+
+  def self.find_from_burger(burger_id)
+    sql = "SELECT * FROM burgers WHERE id = $1;"
+    values = [burger_id]
+    result = SqlRunner.run(sql, values).first()
+    burger = Burger.new(result)
+    sql = "SELECT * FROM eateries WHERE id = $1;"
+    values = [burger.eatery_id]
+    result = SqlRunner.run(sql, values).first()
+    return result['id']
   end
 
 
