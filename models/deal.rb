@@ -52,11 +52,12 @@ class Deal
     SqlRunner.run(sql, values)
   end
 
-  def delete()
+  def self.delete(id)
     sql = "DELETE FROM deals WHERE id = $1"
-    values = [@id]
+    values = [id]
     SqlRunner.run(sql, values)
   end
+
 
 # end of CRUD actions
 

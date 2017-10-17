@@ -40,7 +40,7 @@
   <div class="form-container">
     <form action="/del_eatery" method="post">
       <div class="field">
-        <label for="eatery_id">Eatery: </label>
+        <label for="eatery_id">Eatery (and belonging burgers): </label>
         <select name="eatery_id" id="eatery_id">
           <% @eateries.each do |eatery| %>
             <option value="<%= eatery.id %>"> <%=eatery.name%> </option>
@@ -56,7 +56,7 @@
   <div class="form-container">
     <form action="/del_deal" method="post">
       <div class="field">
-        <label for="deal_id">Eatery: </label>
+        <label for="deal_id">Deal: </label>
         <select name="deal_id" id="deal_id">
           <% @deals.each do |deal| %>
             <option value="<%= deal.id %>"> <%=deal.name%> </option>
@@ -67,6 +67,7 @@
     </form>
   </div>
 </div>
+
 
 
 </div>

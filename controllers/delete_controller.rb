@@ -17,6 +17,6 @@ post '/del_eatery' do
 end
 
 post '/del_deal' do
-  Eatery.delete(params["deal_id"])
+  Deal.delete(params["deal_id"])
   erb ( :deleted )
 end

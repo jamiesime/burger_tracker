@@ -33,6 +33,12 @@ class ApplyDeal
     return apdeal
   end
 
+  def self.delete(id)
+    sql = "DELETE FROM applydeal WHERE id = $1;"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
 
   def fetch_burger()
     sql = "SELECT * FROM burgers WHERE id = $1;"

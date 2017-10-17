@@ -14,12 +14,12 @@ get '/' do
   erb ( :home )
 end
 
-get '/new' do
+get '/edit' do
   @burgers = Burger.find_all()
   @eateries = Eatery.find_all()
   @deals = Deal.find_all()
-  @days = Day.find_all()
-  erb ( :new )
+  @links = ApplyDeal.find_all()
+  erb ( :edit )
 end
 
 get '/search' do
