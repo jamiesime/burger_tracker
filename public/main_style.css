@@ -1,7 +1,15 @@
+html {
+  min-height: 100%
+}
+
 body {
   background-color: #d16b5c;
   margin: 0px;
   font-family: 'Anton', sans-serif;
+  background-image: url("/citybg.png");
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-attachment: scroll;
 }
 
 .nav-container {
@@ -72,7 +80,6 @@ p {
   display: -ms-flex;
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
 }
 
 .sub-menu {

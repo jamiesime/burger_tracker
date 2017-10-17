@@ -1,5 +1,5 @@
 
-<h1>What would you like to add?</h1>
+<h1>ADD RECORDS:</h1>
 
 <div class="sub-menu">
 
@@ -15,5 +15,58 @@
     <div class="option">
       <a href="/link_deal">LINK DEAL</a>
     </div>
+
+</div>
+
+<h1>REMOVE RECORDS: </h1>
+
+<div class="sub-menu">
+  <div class="form-container">
+    <form action="/del_burger" method="post">
+      <div class="field">
+        <label for="burger_id">Burger: </label>
+        <select name="burger_id" id="burger_id">
+          <% @burgers.each do |burger| %>
+            <option value="<%= burger.id %>"> <%=burger.name%> </option>
+          <% end %>
+        </select>
+          <input type="submit" name="submit" value="DELETE">
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="sub-menu">
+  <div class="form-container">
+    <form action="/del_eatery" method="post">
+      <div class="field">
+        <label for="eatery_id">Eatery: </label>
+        <select name="eatery_id" id="eatery_id">
+          <% @eateries.each do |eatery| %>
+            <option value="<%= eatery.id %>"> <%=eatery.name%> </option>
+          <% end %>
+        </select>
+          <input type="submit" name="submit" value="DELETE">
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="sub-menu">
+  <div class="form-container">
+    <form action="/del_deal" method="post">
+      <div class="field">
+        <label for="deal_id">Eatery: </label>
+        <select name="deal_id" id="deal_id">
+          <% @deals.each do |deal| %>
+            <option value="<%= deal.id %>"> <%=deal.name%> </option>
+          <% end %>
+        </select>
+          <input type="submit" name="submit" value="DELETE">
+      </div>
+    </form>
+  </div>
+</div>
+
 
 </div>

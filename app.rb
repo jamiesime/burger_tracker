@@ -8,12 +8,17 @@ require_relative ('./models/apply_deal.rb')
 require_relative('controllers/burger_controller.rb')
 require_relative('controllers/eatery_controller.rb')
 require_relative('controllers/deal_controller.rb')
+require_relative('controllers/delete_controller.rb')
 
 get '/' do
   erb ( :home )
 end
 
 get '/new' do
+  @burgers = Burger.find_all()
+  @eateries = Eatery.find_all()
+  @deals = Deal.find_all()
+  @days = Day.find_all()
   erb ( :new )
 end
 
