@@ -1,5 +1,5 @@
 body {
-  background-color: tomato;
+  background-color: #d16b5c;
   margin: 0px;
   font-family: 'Anton', sans-serif;
 }
@@ -10,6 +10,8 @@ body {
   display: flex;
   justify-content: flex-start;
   background-color: white;
+  background-image: url("table.png");
+  border-bottom: 2px solid #351708;
 }
 
 .nav-container nav {
@@ -27,7 +29,7 @@ body {
   text-decoration: none;
   padding: 0px 20px;
   font-size: 30px;
-  color: #351708;
+  color: #26282b;
 }
 
 .cell {
@@ -39,10 +41,12 @@ body {
 h1 {
   text-align: center;
   margin-bottom: 0px;
+  color: #26282b;
 }
 
 h2 {
   text-align: center;
+  color: #26282b;
 }
 
 .success {
@@ -56,6 +60,7 @@ h2 {
 
 p {
   text-align: center;
+  color: #26282b;
 }
 
 .page-content {
@@ -74,20 +79,25 @@ p {
   text-align: center;
   width: 40%;
   margin: auto;
+
 }
 
 .option {
   margin: 10px 0px;
   background-color: #ffc1a0;
+  background-image: url("table.png");
+  border: 2px solid #351708;
+
 }
 
 .sub-menu .option a {
   text-decoration: none;
   font-size: 24px;
+  color: #2a3047;
 }
 
-a:hover {
-  color: white;
+.sub-menu .option a:hover {
+  color: #dbd6d0;
 }
 
 .form-container a {
@@ -96,4 +106,5 @@ a:hover {
 
 .nav-container a:hover {
   background-color: black;
+  color: #d16b5c;
 }

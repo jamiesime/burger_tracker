@@ -3,20 +3,24 @@
 
 <div class="table-container">
 <table>
-  <tr>
-    <div class="tcell">
-      <th>Burger</th>
-    </div>
-    <div class="tcell">
-      <th>Price</th>
-    </div>
-    <div class="tcell">
-      <th>Deal</th>
-    </div>
-    <div class="tcell">
-      <th>Day</th>
-    </div>
-  </tr>
+    <tr>
+        <div class="tcell">
+          <th>Burger</th>
+        </div>
+        <div class="tcell">
+          <th>Price</th>
+        </div>
+        <div class="tcell">
+          <th>Deal</th>
+        </div>
+        <div class="tcell">
+          <th>Day</th>
+        </div>
+        <div class="tcell">
+          <th>Special Price:</th>
+        </div>
+    </tr>
+
 
   <% list = [] %>
   <% for match in @matches %>
@@ -34,6 +38,12 @@
       <div class="tcell">
         <td> <%= match.fetch_day() %> </td>
       </div>
+      <div class="tcell">
+        <td>
+          <% price = match.fetch_price() %>
+          <% newprice = match.get_discount(price) %>
+          <%= newprice %>
+      </td>
     </tr>
     <% list << match.fetch_burger() %>
     <% end %>
