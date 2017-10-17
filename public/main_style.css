@@ -41,6 +41,23 @@ h1 {
   margin-bottom: 0px;
 }
 
+h2 {
+  text-align: center;
+}
+
+.success {
+  text-align: center;
+  background-color: #bada55;
+  color: #fefecb;
+  width: 40%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+p {
+  text-align: center;
+}
+
 .page-content {
 
 }
