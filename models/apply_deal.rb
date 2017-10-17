@@ -136,7 +136,4 @@ class ApplyDeal
   end
 
 
-
-
-
 end

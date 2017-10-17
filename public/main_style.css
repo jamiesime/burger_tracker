@@ -12,6 +12,12 @@ body {
   background-attachment: fixed;
 }
 
+marquee {
+  top: 50;
+  position: absolute;
+  z-index: -1;
+}
+
 .nav-container {
   display: -webkit-flex;
   display: -ms-flex;
@@ -118,12 +124,18 @@ p {
 
 .todays-deals {
   text-align: center;
-  background-image: url("table.png");
-  border: 2px solid #351708;
+  background-color: #6689c1;
+  color: white;
   margin: auto;
-  width: 50%;
+  max-width: 40%;
+  min-width: 40%;
   display: flex;
   flex-flow: row-wrap;
   justify-content: center;
   margin-top: 5px;
+  border-radius: 10px;
+}
+
+.todays-deals h3 {
+  opacity: 1;
 }
