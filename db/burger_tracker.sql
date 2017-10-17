@@ -25,7 +25,9 @@ CREATE TABLE burgers (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
   price INT8,
-  eatery_id INT8 REFERENCES eateries(id) ON DELETE CASCADE
+  eatery_id INT8 REFERENCES eateries(id) ON DELETE CASCADE,
+  veg VARCHAR(255),
+  spice VARCHAR(255)
 );
 
 CREATE TABLE applydeal (

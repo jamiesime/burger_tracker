@@ -65,3 +65,17 @@ to add.
 
 After that a bit more styling and it is finished. I did some of that
 today in the process of working on other things.
+
+Tuesday 2pm:
+
+The structure of the classes now bear little resemblance to
+the initial class diagram I made out. The views are built on
+the basic sketch wireframe I did at the start, though, and
+the use case diagram has been more than fulfilled.
+
+At this point the project is complete, and I can add a couple
+more features on it if I want to. Everything works the way it
+should and it is styled. The only obvious thing I haven't included,
+although it wasn't in the spec, is an implementation of the update
+function. It is in the CRUD for every class, it just isn't present
+in the views right now.

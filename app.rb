@@ -27,26 +27,26 @@ get '/search' do
   @eateries = Eatery.find_all()
   @deals = Deal.find_all()
   @days = Day.find_all()
-  erb ( :search )
+  erb ( :"view/search" )
 end
 
 get '/list' do
   @matches = ApplyDeal.find_all()
   @burgers = Burger.find_all()
   @deal = Deal.find_all()
-  erb ( :list )
+  erb ( :"view/list" )
 end
 
 post '/deal_by_day' do
   @day = Day.get_name(params["day"].to_i)
   @deals = Deal.find_all()
   @matches = ApplyDeal.find_all()
-  erb ( :deal_by_day )
+  erb ( :"view/deal_by_day" )
 end
 
 post '/deal_by_eatery' do
   @eatery = Eatery.get_name(params["eatery"].to_i)
   @nodeals = Eatery.find_burgers(params["eatery"].to_i)
   @matches = ApplyDeal.find_all()
-  erb ( :deal_by_eatery )
+  erb ( :"view/deal_by_eatery" )
 end

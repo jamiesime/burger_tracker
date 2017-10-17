@@ -8,13 +8,13 @@ get '/add_deal' do
   @eateries = Eatery.find_all()
   @burgers = Burger.find_all()
   @days = Day.find_all()
-  erb ( :add_deal )
+  erb ( :"edit/add_deal" )
 end
 
 post '/deal_conf' do
   deal = Deal.new(params)
   deal.save()
-  erb ( :deal_conf )
+  erb ( :"edit/deal_conf" )
 end
 
 get '/link_deal' do
@@ -22,11 +22,11 @@ get '/link_deal' do
   @burgers = Burger.find_all()
   @days = Day.find_all()
   @deals = Deal.find_all()
-  erb ( :link_deal )
+  erb ( :"edit/link_deal" )
 end
 
 post '/link_conf' do
   newlink = ApplyDeal.new(params)
   newlink.save()
-  erb ( :link_conf )
+  erb ( :"edit/link_conf" )
 end

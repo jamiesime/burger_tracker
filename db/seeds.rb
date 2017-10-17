@@ -33,14 +33,18 @@ eatery1.save()
 burger1 = Burger.new({
   'name' => 'Big Kahuna',
   'price' => 5,
-  'eatery_id' => eatery1.id
+  'eatery_id' => eatery1.id,
+  'veg' => false,
+  'spice' => true
   })
 burger1.save()
 
 burger2 = Burger.new({
   'name' => 'Cheese Supreme',
   'price' => 6,
-  'eatery_id' => eatery1.id
+  'eatery_id' => eatery1.id,
+  'veg' => true,
+  'spice' => true
   })
 burger2.save()
 

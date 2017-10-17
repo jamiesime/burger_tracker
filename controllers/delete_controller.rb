@@ -8,15 +8,15 @@ require_relative ('../models/day.rb')
 
 post '/del_burger' do
   Burger.delete(params["burger_id"])
-  erb ( :deleted )
+  erb ( :"edit/deleted" )
 end
 
 post '/del_eatery' do
   Eatery.delete(params["eatery_id"])
-  erb ( :deleted )
+  erb ( :"edit/deleted" )
 end
 
 post '/del_deal' do
   Deal.delete(params["deal_id"])
-  erb ( :deleted )
+  erb ( :"edit/deleted" )
 end

@@ -6,11 +6,11 @@ require_relative ('../models/eatery.rb')
 
 get '/add_burger' do
   @eateries = Eatery.find_all()
-  erb ( :add_burger )
+  erb ( :"edit/add_burger" )
 end
 
 post '/burger_conf' do
   burger = Burger.new(params)
   burger.save()
-  erb ( :burger_conf )
+  erb ( :"edit/burger_conf" )
 end

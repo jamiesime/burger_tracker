@@ -24,7 +24,16 @@
     <% if @day == match.fetch_day() %>
     <tr>
       <div class="tcell">
-        <td><%= match.fetch_burger() %> </td>
+        <td>
+        <%= match.fetch_burger() %>
+        <% burg = match.get_burger() %>
+        <% if burg.check_veg == true %>
+          <img src="/veg.png" alt="V">
+        <% end %>
+        <% if burg.check_spice == true %>
+          <img src="/spice.png" alt="S">
+        <% end %>
+       </td>
       </div>
       <div class="tcell">
         <td><%= match.fetch_price() %> </td>

@@ -27,7 +27,16 @@
     <% if @eatery == match.fetch_eatery() %>
     <tr>
       <div class="tcell">
-        <td><%= match.fetch_burger() %> </td>
+        <td>
+        <%= match.fetch_burger() %>
+          <% burg = match.get_burger() %>
+          <% if burg.check_veg == true %>
+            <img src="/veg.png" alt="V">
+          <% end %>
+          <% if burg.check_spice == true %>
+            <img src="/spice.png" alt="S">
+          <% end %>
+        </td>
       </div>
       <div class="tcell">
         <td><%= match.fetch_price() %> </td>
@@ -52,7 +61,16 @@
       <% if !list.include?(nodeal.name) %>
       <tr>
         <div class="tcell">
-          <td><%= nodeal.name() %> </td>
+          <td>
+          <%= nodeal.name() %>
+          <% burg = Burger.find_by_name(nodeal.name()) %>
+          <% if burg.check_veg == true %>
+            <img src="/veg.png" alt="V">
+          <% end %>
+          <% if burg.check_spice == true %>
+            <img src="/spice.png" alt="S">
+          <% end %>
+          </td>
         </div>
         <div class="tcell">
           <td><%= nodeal.price() %> </td>

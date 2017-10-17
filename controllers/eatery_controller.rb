@@ -5,11 +5,11 @@ require_relative ('../models/burger.rb')
 require_relative ('../models/eatery.rb')
 
 get '/add_eatery' do
-  erb ( :add_eatery )
+  erb ( :"edit/add_eatery" )
 end
 
 post '/eatery_conf' do
   eatery = Eatery.new(params)
   eatery.save()
-  erb ( :eatery_conf )
+  erb ( :"edit/eatery_conf" )
 end

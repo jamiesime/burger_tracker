@@ -39,6 +39,13 @@ class ApplyDeal
     SqlRunner.run(sql, values)
   end
 
+  def get_burger()
+    sql = "SELECT * FROM burgers WHERE id = $1;"
+    values = [@burger_id]
+    burger = SqlRunner.run(sql, values).first()
+    obj = Burger.new(burger)
+    return obj
+  end
 
   def fetch_burger()
     sql = "SELECT * FROM burgers WHERE id = $1;"

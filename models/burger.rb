@@ -2,7 +2,7 @@ require_relative("../db/sql_runner.rb")
 
 class Burger
 
-  attr_accessor :name, :price, :eatery_id
+  attr_accessor :name, :price, :eatery_id, :veg, :spice
   attr_reader :id
 
   def initialize(info)
@@ -10,21 +10,23 @@ class Burger
     @name = info['name']
     @price = info['price']
     @eatery_id = info['eatery_id']
+    @veg = info['veg']
+    @spice = info['spice']
   end
 
   def save()
-    sql = "INSERT INTO burgers (name, price, eatery_id) VALUES
-    ($1, $2, $3) RETURNING id;"
-    values = [@name, @price, @eatery_id]
+    sql = "INSERT INTO burgers (name, price, eatery_id, veg, spice) VALUES
+    ($1, $2, $3, $4, $5) RETURNING id;"
+    values = [@name, @price, @eatery_id, @veg, @spice]
     burger = SqlRunner.run(sql, values).first()
     @id = burger['id'].to_i
   end
 
   def update()
-    sql = "UPDATE burgers SET (name, price, eatery_id)
-     = ($1, $2, $3)
-     WHERE id = $4"
-    values = [@name, @price, @eatery_id, @id]
+    sql = "UPDATE burgers SET (name, price, eatery_id, veg, spice)
+     = ($1, $2, $3, $4, $5)
+     WHERE id = $6"
+    values = [@name, @price, @eatery_id, @veg, @spice, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -35,6 +37,15 @@ class Burger
     results = tables.map {|table| Burger.new(table)}
     return results
   end
+
+  def self.find_by_name(name)
+    sql = "SELECT * FROM burgers WHERE name = $1"
+    values = [name]
+    burger = SqlRunner.run(sql, values).first()
+    result = Burger.new(burger)
+    return result
+  end
+
 
   def self.find(id)
     sql = "SELECT * FROM burgers WHERE id = $1"
@@ -87,6 +98,22 @@ class Burger
       return result['day'].to_s
     else
       return 'N/A'
+    end
+  end
+
+  def check_veg()
+    if @veg == "true"
+      return true
+    else
+      return false
+    end
+  end
+
+  def check_spice()
+    if @spice == "true"
+      return true
+    else
+      return false
     end
   end
 
