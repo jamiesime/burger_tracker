@@ -9,7 +9,7 @@ body {
   background-image: url("/citybg.png");
   background-repeat: repeat-x;
   background-position: bottom;
-  background-attachment: scroll;
+  background-attachment: fixed;
 }
 
 .nav-container {
