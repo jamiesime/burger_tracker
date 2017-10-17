@@ -69,6 +69,18 @@ class ApplyDeal
     end
   end
 
+  def self.get_todays_deals(day)
+    sql = "SELECT * FROM days WHERE name = $1;"
+    values = [day]
+    today = SqlRunner.run(sql, values).first()
+    check = Day.new(today)
+    sql = "SELECT * FROM applydeal WHERE day_id = $1;"
+    values = [check.id]
+    matches = SqlRunner.run(sql, values)
+    result = matches.map {|match| ApplyDeal.new(match)}
+    return result.length
+  end
+
   def fetch_day()
     sql = "SELECT * FROM days WHERE id = $1;"
     values = [@day_id]

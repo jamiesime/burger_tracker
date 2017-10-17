@@ -1,5 +1,6 @@
 require ('sinatra')
 require ('sinatra/contrib/all')
+require ('date')
 require_relative ('./models/deal.rb')
 require_relative ('./models/burger.rb')
 require_relative ('./models/eatery.rb')
@@ -11,6 +12,8 @@ require_relative('controllers/deal_controller.rb')
 require_relative('controllers/delete_controller.rb')
 
 get '/' do
+  @day = Date.today.strftime("%A")
+  @date = Date.today.strftime("%A, %d-%m-%Y")
   erb ( :home )
 end
 

@@ -1,5 +1,12 @@
-<h2>Welcome back, Adam. Let's track some burgers.</h2>
 
 <div class="biglogo">
 <img src="/burgerlogo.png" alt="Burger Tracker">
+</div>
+
+<div class="todays-deals">
+<h3>Today is <%= @date %></h3>
+</div>
+
+<div class="todays-deals">
+<h3> Deals Today: <%= ApplyDeal.get_todays_deals(@day) %> </h3>
 </div>
