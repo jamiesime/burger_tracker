@@ -6,11 +6,10 @@ Nav -
 
 Pages:
 - Home page
-      Explain basic functionality of website.
 - Add Burger
       Takes user to page with form to fill in all details,
       then adds these to the burger_tracker db, and notifies
-      of success or errors.
+      of success.
 - View
     - Takes user to page where they can select available
       eateries and view all details relating to that eatery.

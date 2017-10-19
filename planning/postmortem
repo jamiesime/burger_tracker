@@ -1,0 +1,15 @@
+
+Final Notes:
+
+- MVP was achieved.
+- Extra features are 'deals today' on homepage and 'spicy/veg' options
+  on add and display.
+- Designed to be suitable for mobile display without actually being
+  responsive.
+
+- Update functionality was an oversight - by the time I remebered to
+  include it, I realised I didn't immediately know how to do it in
+  the dropdown system, so had to leave it out or risk breaking what
+  worked.
+
+- 
